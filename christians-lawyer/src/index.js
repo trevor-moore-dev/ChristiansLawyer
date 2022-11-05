@@ -1,10 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { hydrateRoot } from 'react-dom/client';
 import App from './App';
+import { CacheProvider } from '@emotion/react';
+import createEmotionCache from './createEmotionCache';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const cache = createEmotionCache();
+
+function ChristiansLawyer() {
+    return (
+        <CacheProvider value={cache}>
+            <App client />
+        </CacheProvider>
+    );
+};
+
+const container = document.getElementById('root');
+hydrateRoot(container, <ChristiansLawyer />);
