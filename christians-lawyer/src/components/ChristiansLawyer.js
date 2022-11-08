@@ -5,7 +5,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
@@ -13,8 +12,11 @@ import Container from '@mui/material/Container';
 import Slide from '@mui/material/Slide';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import GavelIcon from '@mui/icons-material/Gavel';
+import Switch from '@mui/material/Switch';
+import Tooltip from '@mui/material/Tooltip';
 import { ThemeContext } from './ThemeContext';
+import { Link } from "react-router-dom";
+import GolgothaBackground from '../resources/images/golgotha.png';
 
 function HideOnScroll({ children }) {
     const trigger = useScrollTrigger();
@@ -28,6 +30,7 @@ function HideOnScroll({ children }) {
 export default function ChristiansLawyer() {
 
     const theme = useContext(ThemeContext);
+    const [checked, setChecked] = useState(theme.isDark);
     const [anchorElNav, setAnchorElNav] = useState(null);
 
     const handleOpenNavMenu = (e) => {
@@ -38,36 +41,34 @@ export default function ChristiansLawyer() {
         setAnchorElNav(null);
     };
 
-    const toggleTheme = () => {
+    const toggleTheme = (e) => {
         handleCloseNavMenu();
+        setChecked(e.target.checked);
         theme.toggle();
     };
 
 	return (
         <>
             <HideOnScroll>
-                <AppBar>
+                <AppBar color='default'>
                     <Container maxWidth="xl">
-                        <Toolbar disableGutters>
-                            <GavelIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                        <Toolbar disableGutters style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <Typography
                                 variant="h6"
                                 noWrap
-                                component="a"
-                                href="/"
                                 sx={{
                                     mr: 2,
-                                    display: { xs: 'none', md: 'flex' },
-                                    color: 'inherit',
-                                    textDecoration: 'none',
+                                    display: { xs: 'none', md: 'flex' }
                                 }}
                             >
-                                Christian’s Lawyer
+                                <Link to='/' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                    Christian’s Lawyer
+                                </Link>
                             </Typography>
                             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                                 <IconButton
                                     size="large"
-                                    aria-label="account of current user"
+                                    aria-label="navigation menu"
                                     aria-controls="menu-appbar"
                                     aria-haspopup="true"
                                     onClick={handleOpenNavMenu}
@@ -93,33 +94,85 @@ export default function ChristiansLawyer() {
                                     display: { xs: 'block', md: 'none' },
                                     }}
                                 >
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">
+                                            <Link to='/services' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                                Services
+                                            </Link>
+                                        </Typography>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">
+                                            <Link to='/frequently-asked-questions' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                                FAQ
+                                            </Link>
+                                        </Typography>
+                                    </MenuItem>
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">
+                                            <Link to='/contact-us' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                                Contact Us
+                                            </Link>
+                                        </Typography>
+                                    </MenuItem>
                                     <MenuItem onClick={toggleTheme}>
-                                        <Typography textAlign="center">Theme</Typography>
+                                        <Switch
+                                            color="default"
+                                            checked={checked}
+                                            inputProps={{ 'aria-label': 'toggle theme' }}
+                                        />
                                     </MenuItem>
                                 </Menu>
                             </Box>
                             <Typography
                                 variant="h5"
                                 noWrap
-                                component="a"
-                                href="/"
                                 sx={{
-                                    mr: 2,
                                     display: { xs: 'flex', md: 'none' },
-                                    flexGrow: 1,
-                                    color: 'inherit',
-                                    textDecoration: 'none',
+                                    flexGrow: 1
                                 }}
                             >
-                                Christian’s Lawyer
+                                <Link to='/' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                    Christian’s Lawyer
+                                </Link>
                             </Typography>
-                            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                                <Button
-                                    onClick={toggleTheme}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                                <Typography
+                                    textAlign="center"
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, mx: 1, display: 'flex', alignItems: 'center' }}
                                 >
-                                    Theme
-                                </Button>
+                                    <Link to='/services' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        SERVICES
+                                    </Link>
+                                </Typography>
+                                <Typography
+                                    textAlign="center"
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, mx: 1, display: 'flex', alignItems: 'center' }}
+                                >
+                                    <Link to='/frequently-asked-questions' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        FAQ
+                                    </Link>
+                                </Typography>
+                                <Typography
+                                    textAlign="center"
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, mx: 1, display: 'flex', alignItems: 'center' }}
+                                >
+                                    <Link to='/contact-us' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        CONTACT US
+                                    </Link>
+                                </Typography>
+                                <Tooltip title="Toggle Theme">
+                                    <Switch
+                                        color="default"
+                                        checked={checked}
+                                        onClick={toggleTheme}
+                                        inputProps={{ 'aria-label': 'toggle theme' }}
+                                        sx={{ my: 2, mx: 1 }}
+                                    />
+                                </Tooltip>
                             </Box>
                         </Toolbar>
                     </Container>
@@ -153,7 +206,7 @@ export default function ChristiansLawyer() {
                                 }
                             ]}
                         />
-                        Test
+                        <img src={GolgothaBackground} style={{ width: '100%' }} alt='Jesus Christ the KING' />
                     </>}
                 />
             </Routes>

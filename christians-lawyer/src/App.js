@@ -15,7 +15,7 @@ export default function App(props) {
   };
   
   return (
-    <ThemeContext.Provider value={{ toggle }}>
+    <ThemeContext.Provider value={{ isDark, toggle }}>
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <CssBaseline />
         {props.server ?
