@@ -62,28 +62,17 @@ export default function Header() {
         <HideOnScroll>
             <AppBar color='default'>
                 <Container maxWidth="xl">
-                    <Toolbar disableGutters style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography
-                            variant="h5"
-                            noWrap
-                            sx={{
-                                mr: 2,
-                                display: { xs: 'none', md: 'flex' }
-                            }}
-                        >
-                            <Link
-                                to='/'
-                                style={{
-                                    color: 'inherit',
-                                    textDecoration: 'none',
-                                    fontFamily: 'Impact',
-                                    fontSize: '32px'
-                                }}
-                            >
-                                Christian’s Lawyer
-                            </Link>
-                        </Typography>
-                        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Toolbar
+                        disableGutters
+                        sx={{
+                            display: 'flex',
+                            justifyContent: {
+                                xs: 'flex-start',
+                                md: 'space-between'
+                            }
+                        }}
+                    >
+                        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                             <IconButton
                                 size="large"
                                 aria-label="navigation menu"
@@ -109,7 +98,7 @@ export default function Header() {
                                 open={Boolean(anchorElNav)}
                                 onClose={handleCloseNavMenu}
                                 sx={{
-                                display: { xs: 'block', md: 'none' },
+                                    display: { xs: 'block', md: 'none' },
                                 }}
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
@@ -143,14 +132,21 @@ export default function Header() {
                             </Menu>
                         </Box>
                         <Typography
-                            variant="h5"
                             noWrap
                             sx={{
-                                display: { xs: 'flex', md: 'none' },
-                                flexGrow: 1
+                                fontSize: {
+                                    xs: '24px',
+                                    md: '32px'
+                                }
                             }}
                         >
-                            <Link to='/' style={{ color: 'inherit', textDecoration: 'none', fontFamily: 'Impact' }}>
+                            <Link
+                                to='/'
+                                style={{
+                                    color: 'inherit',
+                                    textDecoration: 'none'
+                                }}
+                            >
                                 Christian’s Lawyer
                             </Link>
                         </Typography>
