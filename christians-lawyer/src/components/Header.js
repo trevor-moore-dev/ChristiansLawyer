@@ -103,6 +103,13 @@ export default function Header() {
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
+                                        <Link to='/' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                            Home
+                                        </Link>
+                                    </Typography>
+                                </MenuItem>
+                                <MenuItem onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">
                                         <Link to='/services' style={{ color: 'inherit', textDecoration: 'none' }}>
                                             Services
                                         </Link>
@@ -126,7 +133,7 @@ export default function Header() {
                                     <Switch
                                         color="default"
                                         checked={checked}
-                                        inputProps={{ 'aria-label': 'toggle theme' }}
+                                        inputProps={{ 'aria-label': checked ? 'light mode' : 'dark mode' }}
                                     />
                                 </MenuItem>
                             </Menu>
@@ -156,6 +163,15 @@ export default function Header() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
+                                <NavLink to='/' style={({ isActive }) => (isActive ? activeLinkStyles : linkStyles )}>
+                                    HOME
+                                </NavLink>
+                            </Typography>
+                            <Typography
+                                textAlign="center"
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
+                            >
                                 <NavLink to='/services' style={({ isActive }) => (isActive ? activeLinkStyles : linkStyles )}>
                                     SERVICES
                                 </NavLink>
@@ -178,12 +194,12 @@ export default function Header() {
                                     CONTACT US
                                 </NavLink>
                             </Typography>
-                            <Tooltip title="Toggle Theme">
+                            <Tooltip title={checked ? 'Light Mode' : 'Dark Mode'}>
                                 <Switch
                                     color="default"
                                     checked={checked}
                                     onClick={toggleTheme}
-                                    inputProps={{ 'aria-label': 'toggle theme' }}
+                                    inputProps={{ 'aria-label': checked ? 'light mode' : 'dark mode' }}
                                     sx={{ my: 2, mx: 2 }}
                                 />
                             </Tooltip>

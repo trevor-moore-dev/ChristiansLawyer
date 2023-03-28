@@ -8,6 +8,7 @@ import { lightTheme, darkTheme } from './components/Theme';
 import ChristiansLawyer from "./components/ChristiansLawyer";
 import Cookies from 'js-cookie';
 import './App.css';
+import 'leaflet/dist/leaflet.css';
 
 export default function App(props) {
   const [isDark, setIsDark] = useState(false);
