@@ -60,7 +60,7 @@ export default function Contact() {
                         />
                         <Marker position={[33.4504393, -112.081053]}>
                             <Popup>
-                                Christian's Lawyer <br /> Easily customizable.
+                                <b>Christian's Lawyer</b><br />Phoenix, AZ
                             </Popup>
                         </Marker>
                     </MapContainer>
