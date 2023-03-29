@@ -1,12 +1,14 @@
 import React from "react";
 import { Helmet } from 'react-helmet';
-import { MapContainer } from 'react-leaflet/MapContainer';
-import { TileLayer } from 'react-leaflet/TileLayer';
-import { Marker } from 'react-leaflet/Marker';
-import { Popup } from 'react-leaflet/Popup';
+import loadable from '@loadable/component';
 import Grid from '@mui/material/Grid';
 import Typography from "@mui/material/Typography";
 import Link from '@mui/material/Link';
+
+const MapContainer = loadable(() => import('react-leaflet/MapContainer'), { ssr: false, resolveComponent: (components) => components.MapContainer });
+const TileLayer = loadable(() => import('react-leaflet/TileLayer'), { ssr: false, resolveComponent: (components) => components.TileLayer });
+const Marker = loadable(() => import('react-leaflet/Marker'), { ssr: false, resolveComponent: (components) => components.Marker });
+const Popup = loadable(() => import('react-leaflet/Popup'), { ssr: false, resolveComponent: (components) => components.Popup });
 
 export default function Contact() {
     return (
