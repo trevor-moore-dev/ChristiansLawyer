@@ -13,4 +13,4 @@ app.use(express.static('build'));
 app.use(express.static('build-server'));
 
 // start the app
-app.listen(PORT, () => console.log("Christian’s Lawyer listening on port " + PORT + "..."));
+app.listen(PORT, () => console.log("Christians Lawyer listening on port " + PORT + "..."));

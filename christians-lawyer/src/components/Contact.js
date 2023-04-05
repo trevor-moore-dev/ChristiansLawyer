@@ -15,19 +15,19 @@ export default function Contact() {
         <>
             <Helmet
                 htmlAttributes={{ lang: 'en' }}
-                title="Christian’s Lawyer | Contact Us"
+                title="Christians Lawyer | Contact Us"
                 meta={[
                     {
                         name: 'title',
-                        content: "Christian’s Lawyer | Contact Us"
+                        content: "Christians Lawyer | Contact Us"
                     },
                     {
                         name: 'description',
-                        content: 'Contact a Christian Lawyer for legal aid in Phoenix, Arizona'
+                        content: 'Contact a Christian Lawyer for free legal aid'
                     },
                     {
                         name: 'keywords',
-                        content: 'Lawyer,Attorney,Legal Aid,Legal Help,Christian Lawyer,Christian Attorney,Christian,Christ,Gospel,Justice'
+                        content: 'Lawyer,Attorney,Legal Aid,Legal Help,Christian Lawyer,Christian Attorney,Christian,Christ,Gospel,Justice,Phoenix,Phoenix Arizona,Arizona'
                     }
                 ]}
                 link={[
@@ -49,7 +49,7 @@ export default function Contact() {
                         We believe that a lawyer can be a Christian that serves everyone for God's glory and their clients' good (Romans 8:28-29).
                     </Typography>
                     <Typography sx={{ py: 1, pr: 2 }}>
-                        <i>Christian's Lawyer</i> is based in Arizona.
+                        <i>Christians Lawyer</i> is based in Arizona.
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -60,7 +60,7 @@ export default function Contact() {
                         />
                         <Marker position={[33.4504393, -112.081053]}>
                             <Popup>
-                                <b>Christian's Lawyer</b><br />Phoenix, AZ
+                                <b>Christians Lawyer</b><br />Phoenix, AZ
                             </Popup>
                         </Marker>
                     </MapContainer>

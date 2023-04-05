@@ -8,11 +8,11 @@ export default function Faq() {
         <>
             <Helmet
                 htmlAttributes={{ lang: 'en' }}
-                title="Christian’s Lawyer | FAQ"
+                title="Christians Lawyer | FAQ"
                 meta={[
                     {
                         name: 'title',
-                        content: "Christian’s Lawyer | FAQ"
+                        content: "Christians Lawyer | FAQ"
                     },
                     {
                         name: 'description',
@@ -20,7 +20,7 @@ export default function Faq() {
                     },
                     {
                         name: 'keywords',
-                        content: 'Lawyer,Attorney,Legal Aid,Legal Help,Christian Lawyer,Christian Attorney,Christian,Christ,Gospel,Justice'
+                        content: 'Lawyer,Attorney,Legal Aid,Legal Help,Christian Lawyer,Christian Attorney,Christian,Christ,Gospel,Justice,Phoenix,Phoenix Arizona,Arizona'
                     }
                 ]}
                 link={[

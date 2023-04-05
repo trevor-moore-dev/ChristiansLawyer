@@ -12,19 +12,19 @@ export default function Services() {
         <>
             <Helmet
                 htmlAttributes={{ lang: 'en' }}
-                title="Christian’s Lawyer | Services"
+                title="Christians Lawyer | Services"
                 meta={[
                     {
                         name: 'title',
-                        content: "Christian’s Lawyer | Services"
+                        content: "Christians Lawyer | Services"
                     },
                     {
                         name: 'description',
-                        content: "Legal services offered by Christian's Lawyer"
+                        content: "Legal services offered by Christians Lawyer"
                     },
                     {
                         name: 'keywords',
-                        content: 'Lawyer,Attorney,Legal Aid,Legal Help,Christian Lawyer,Christian Attorney,Christian,Christ,Gospel,Justice'
+                        content: 'Lawyer,Attorney,Legal Aid,Legal Help,Christian Lawyer,Christian Attorney,Christian,Christ,Gospel,Justice,Phoenix,Phoenix Arizona,Arizona'
                     }
                 ]}
                 link={[

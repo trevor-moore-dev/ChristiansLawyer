@@ -154,7 +154,7 @@ export default function Header() {
                                     textDecoration: 'none'
                                 }}
                             >
-                                Christian’s Lawyer
+                                Christians Lawyer
                             </Link>
                         </Typography>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

@@ -11,7 +11,7 @@ export default function Footer() {
             </Grid>
             <Grid item xs={12}>
                 <Typography>
-                    Copyright © {new Date().getFullYear()} Christian's Lawyer - All Rights Reserved.
+                    Copyright © {new Date().getFullYear()} Christians Lawyer - All Rights Reserved.
                 </Typography>
             </Grid>
         </Grid>
