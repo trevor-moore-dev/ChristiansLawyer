@@ -107,7 +107,6 @@ export default function Faq() {
                 <Grid item xs={12} md={12} lg={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 5 }}>
                     <Carousel
                         animation='slide'
-                        navButtonsAlwaysVisible
                         fullHeightHover={false}
                         autoPlay={false}
                         sx={{
@@ -154,7 +153,6 @@ export default function Faq() {
                 <Grid item xs={12} md={12} lg={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 5 }}>
                     <Carousel
                         animation='slide'
-                        navButtonsAlwaysVisible
                         fullHeightHover={false}
                         autoPlay={false}
                         sx={{
