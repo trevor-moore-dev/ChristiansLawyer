@@ -1,10 +1,15 @@
 import { Button, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from 'react-helmet';
 import Background from '../resources/images/background.png';
 import Box from '@mui/material/Box';
 
 export default function Home() {
+
+    useEffect(() => {
+        new Image().src = Background;
+    }, []);
+
     return (
         <>
             <Helmet
@@ -31,7 +36,27 @@ export default function Home() {
                     }
                 ]}
             />
-            <img src={Background} style={{ width: '100%' }} alt="Christian Lawyer" />
+            <Box
+                sx={{
+                    height: {
+                        xs: '200px',
+                        sm: '300px',
+                        md: '400px',
+                        lg: '500px',
+                        xl: '500px'
+                    }
+                }}
+            >
+                <img
+                    src={Background}
+                    alt="Christian Lawyer"
+                    style={{
+                        height: '100%',
+                        width: '100%',
+                        objectFit: 'cover'
+                    }}
+                />
+            </Box>
             <Box sx={{ width: { md: '80%', xs: '90%' }, m: '0 auto', textAlign: 'center' }}>
                 <Typography variant='h1' sx={{ fontSize: '1.5rem', px: 2, pt: 2 }}>Contact your Christian Lawyer</Typography>
                 <Typography variant='h2' sx={{ fontSize: '2rem', px: 2, py: 1 }}>Legal aid from a Christian perspective <i>to the glory of God</i></Typography>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from 'react-helmet';
 import Grid from '@mui/material/Grid';
 import Typography from "@mui/material/Typography";
@@ -8,6 +8,13 @@ import LegalPlans from '../resources/images/legal-plans.jpg';
 import SpiritualPlans from '../resources/images/spiritual-plans.jpg';
 
 export default function Services() {
+
+    useEffect(() => {
+        new Image().src = OnlineLegalConsultation;
+        new Image().src = LegalPlans;
+        new Image().src = SpiritualPlans;
+    }, []);
+
     return (
         <>
             <Helmet
