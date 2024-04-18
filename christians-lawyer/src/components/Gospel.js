@@ -245,7 +245,7 @@ export default function Gospel() {
                         display: 'flex',
                         alignItems: 'center',
                         position: 'absolute',
-                        bottom: '12%',
+                        bottom: { lg: '12%', md: '12%', sm: '-16px', xs: '-16px' },
                         left: '50%',
                         opacity: { lg: 0, md: 0, sm: 1, xs: 1 },
                         background: 'white',
