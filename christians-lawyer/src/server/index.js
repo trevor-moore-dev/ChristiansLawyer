@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.get('/', renderer);
 app.get('/services', renderer);
-app.get('/frequently-asked-questions', renderer);
+app.get('/what-is-the-gospel', renderer);
 app.get('/contact-us', renderer);
 app.use(express.static('build'));
 app.use(express.static('build-server'));

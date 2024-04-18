@@ -117,8 +117,8 @@ export default function Header() {
                                 </MenuItem>
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link to='/frequently-asked-questions' style={{ color: 'inherit', textDecoration: 'none' }}>
-                                            FAQ
+                                        <Link to='/what-is-the-gospel' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                            What Is The Gospel
                                         </Link>
                                     </Typography>
                                 </MenuItem>
@@ -181,8 +181,8 @@ export default function Header() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
-                                <NavLink to='/frequently-asked-questions' style={({ isActive }) => (isActive ? activeLinkStyles : linkStyles )}>
-                                    FAQ
+                                <NavLink to='/what-is-the-gospel' style={({ isActive }) => (isActive ? activeLinkStyles : linkStyles )}>
+                                    WHAT IS THE GOSPEL
                                 </NavLink>
                             </Typography>
                             <Typography

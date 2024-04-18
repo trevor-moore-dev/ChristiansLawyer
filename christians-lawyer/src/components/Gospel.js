@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
 import Background from '../resources/images/golgotha.png';
-import { Box, Button, Typography } from "@mui/material";
-import Grid from '@mui/material/Grid';
+import { Grid, Stack, Box, Link, Typography, IconButton } from "@mui/material";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Carousel from 'react-material-ui-carousel';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import { pdfjs, Document, Page } from 'react-pdf';
 
 import english1 from '../resources/images/english-tract-1.jpg';
 import english2 from '../resources/images/english-tract-2.jpg';
@@ -30,35 +32,52 @@ import spanish9 from '../resources/images/spanish-tract-9.jpg';
 import spanish10 from '../resources/images/spanish-tract-10.jpg';
 import spanish11 from '../resources/images/spanish-tract-11.jpg';
 
-export default function Faq() {
+import assuranceForEternity from '../resources/documents/assurance-for-eternity.pdf';
+
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    'pdfjs-dist/build/pdf.worker.min.js',
+    import.meta.url,
+  ).toString();
+
+export default function Gospel() {
+
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
 
     useEffect(() => {
         new Image().src = Background;
     }, []);
 
+    const onDocumentLoadSuccess = ({ numPages }) => {
+        setNumPages(numPages);
+    };
+
     return (
         <>
             <Helmet
                 htmlAttributes={{ lang: 'en' }}
-                title="Christians Lawyer | FAQ"
+                title="Christians Lawyer | What Is The Gospel"
                 meta={[
                     {
                         name: 'title',
-                        content: "Christians Lawyer | FAQ"
+                        content: "Christians Lawyer | What Is The Gospel"
                     },
                     {
                         name: 'description',
-                        content: 'Frequently asked legal questions from a Christian perspective'
+                        content: 'The Gospel of Jesus Christ'
                     },
                     {
                         name: 'keywords',
-                        content: 'Lawyer,Attorney,Legal Aid,Legal Help,Christian Lawyer,Christian Attorney,Christian,Christ,Gospel,Justice,Phoenix,Phoenix Arizona,Arizona'
+                        content: 'Gospel,Jesus,Christ,Good News,Gospel of Jesus Christ,Bible,Christian'
                     }
                 ]}
                 link={[
                     {
                         rel: 'canonical',
-                        href: 'https://www.christianslawyer.org/frequently-asked-questions'
+                        href: 'https://www.christianslawyer.org/what-is-the-gospel'
                     }
                 ]}
             />
@@ -83,27 +102,37 @@ export default function Faq() {
                     }}
                 />
             </Box>
-            <Box sx={{ width: { md: '80%', xs: '90%' }, m: '0 auto', textAlign: 'center' }}>
-                <Typography variant='h1' sx={{ fontSize: '1.5rem', px: 2, pt: 2 }}>How do I become a Christian?</Typography>
-                <Typography variant='h2' sx={{ fontSize: '1rem', px: 2, py: 1 }}>For God so loved the world, that He gave his only Son, that whoever believes in Him should not perish but have eternal life (John 3:16).</Typography>
-                <Typography variant='h2' sx={{ fontSize: '1rem', px: 2, py: 1 }}>Truly, truly, I say to you, whoever hears My word and believes Him who sent Me has eternal life. He does not come into judgment, but has passed from death to life (John 5:24).</Typography>
-                <Button variant='contained' sx={{ m: 2 }} href='https://www.youtube.com/watch?v=NUB4I5vO12o' target='_blank' rel='noopener'>What is the Gospel?</Button>
-                <Typography variant='h2' sx={{ fontSize: '1.5rem', px: 2, pt: 2 }}>Why do I need the Gospel of Jesus Christ?</Typography>
-                <Typography variant='h2' sx={{ fontSize: '1rem', px: 2, py: 1 }}>The times of ignorance God overlooked, but now He commands all people everywhere to repent, because He has fixed a day on which He will judge the world in righteousness by a Man whom He has appointed; and of this He has given assurance to all by raising Him from the dead (Acts 17:30-31).</Typography>
-                <Typography variant='h2' sx={{ fontSize: '1rem', px: 2, py: 1 }}>For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord (Romans 6:23).</Typography>
-                <Button variant='contained' sx={{ m: 2 }} href='https://www.youtube.com/watch?v=t1BWSOVNm4A' target='_blank' rel='noopener'>Why does it matter?</Button>
-                <Typography variant='h2' sx={{ fontSize: '1.5rem', px: 2, pt: 2 }}>What's the purpose of my life?</Typography>
-                <Typography variant='h2' sx={{ fontSize: '1rem', px: 2, py: 1 }}>You make known to me the path of life; in Your presence there is fullness of joy; at Your right hand are pleasures forevermore (Psalm 16:11).</Typography>
-                <Typography variant='h2' sx={{ fontSize: '1rem', px: 2, py: 1 }}>For He satisfies the longing soul, and the hungry soul He fills with good things (Psalm 107:9).</Typography>
-                <Button variant='contained' sx={{ m: 2 }} href='https://www.youtube.com/watch?v=_DJ5AJfx3so' target='_blank' rel='noopener'>Where can I find joy?</Button>
-                <Typography variant='h2' sx={{ fontSize: '1.5rem', px: 2, pt: 2 }}>How can I know God personally?</Typography>
-                <Typography variant='h2' sx={{ fontSize: '1rem', px: 2, py: 1 }}>My sheep hear My voice, and I know them, and they follow Me. I give them eternal life, and they will never perish, and no one will snatch them out of My hand (John 10:27-28).</Typography>
-                <Button variant='contained' sx={{ m: 2 }} href='http://www.4laws.com/laws/englishkgp/default.htm' target='_blank' rel='noopener'>The four spiritual laws</Button>
-                <Typography variant='h2' sx={{ fontSize: '1.5rem', px: 2, pt: 2 }}>How can I go to Heaven instead of Hell?</Typography>
-                <Typography variant='h2' sx={{ fontSize: '1rem', px: 2, py: 1 }}>Enter by the narrow gate. For the gate is wide and the way is easy that leads to destruction, and those who enter by it are many. For the gate is narrow and the way is hard that leads to life, and those who find it are few (Matthew 7:13-14).</Typography>
-                <Button variant='contained' sx={{ m: 2 }} href='https://www.youtube.com/watch?v=7gr0xXfR3L8' target='_blank' rel='noopener'>Jesus is the bridge from man to God</Button>
-            </Box>
             <Grid container sx={{ width: { xs: '90%', md: '60%', lg: '80%' }, margin: '0 auto', pt: 8 }}>
+                <Grid item xs={12} md={12} lg={9} sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <Typography variant='h4'>What Is The Gospel?</Typography>
+                    <Typography variant='body1' sx={{ fontStyle: 'italic', pt: 2 }}>
+                        "The gospel is called the 'good news' because it addresses the most serious problem that you and I have as human beings, and that problem is simply this: God is holy and He is just, and I'm not. And at the end of my life, I'm going to stand before a just and holy God, and I'll be judged. And I'll be judged either on the basis of my own righteousness–or lack of it–or the righteousness of another. The good news of the gospel is that Jesus lived a life of perfect righteousness, of perfect obedience to God, not for His own well being but for His people. He has done for me what I couldn't possibly do for myself. But not only has He lived that life of perfect obedience, He offered Himself as a perfect sacrifice to satisfy the justice and the righteousness of God."
+                    </Typography>
+                    <Typography variant='body1' sx={{ pt: 1 }}>
+                        - R.C. Sproul
+                    </Typography>
+                    <Typography variant='body1' sx={{ fontStyle: 'italic', pt: 4 }}>
+                        "If you confess with your mouth that Jesus is Lord and believe in your heart that God raised Him from the dead, you will be saved."
+                    </Typography>
+                    <Typography variant='body1' sx={{ pt: 1 }}>
+                        - Romans 10:9 ESV
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} md={12} lg={3} sx={{ pt: { lg: 0, md: 4, xs: 4 } }}>
+                    <Stack sx={{ pl: { lg: 4, md: 0, xs: 0 } }}>
+                        <Typography variant='h6'>Resources</Typography>
+                        <ul>
+                            <li><Link href='https://www.youtube.com/watch?v=zWizZ53RFVw' target='_blank' rel='noopener'>What Is The Gospel?</Link></li>
+                            <li><Link href='https://www.esv.org/John+1/' target='_blank' rel='noopener'>The Gospel of John</Link></li>
+                            <li><Link href='https://www.9marks.org/church-search/' target='_blank' rel='noopener'>Find A Church Near Me</Link></li>
+                            <li><Link href='https://www.amazon.com/What-Did-You-Expect-Redesign/dp/143354945X' target='_blank' rel='noopener'>Marriage Counseling</Link></li>
+                            <li><Link href='https://www.facebook.com/profile.php?id=100083528617949' target='_blank' rel='noopener'>Legal Counseling</Link></li>
+                        </ul>
+                    </Stack>
+                </Grid>
+                <Grid item xs={12} sx={{ pt: 10, textAlign: 'center' }}>
+                    <Typography variant='h4'>Gospel Justice Tracts</Typography>
+                </Grid>
                 <Grid item xs={12} md={12} lg={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 5 }}>
                     <Carousel
                         animation='slide'
@@ -197,6 +226,52 @@ export default function Faq() {
                     </Carousel>
                 </Grid>
             </Grid>
+            <Box
+                sx={{
+                    width: {
+                        md: '80%',
+                        xs: '90%'
+                    },
+                    m: '0 auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    position: 'relative',
+                    py: 5
+                }}
+            >
+                <Document file={assuranceForEternity} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Page pageNumber={pageNumber} />
+                </Document>
+                <Box
+                    className='pagination'
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        position: 'absolute',
+                        bottom: '12%',
+                        left: '50%',
+                        opacity: { lg: 0, md: 0, sm: 1, xs: 1 },
+                        background: 'white',
+                        color: 'black',
+                        transform: 'translate(-50%)',
+                        transition: 'opacity ease-in-out .2s',
+                        borderRadius: '4px',
+                        boxShadow: 'rgba(16, 36, 94, 0.2) 0px 30px 40px 0px',
+                        zIndex: 2,
+                        '&:hover': {
+                            opacity: 1
+                        }
+                    }}
+                >
+                    <IconButton disabled={pageNumber === 1} onClick={() => setPageNumber(pageNumber => pageNumber - 1)}>
+                        <NavigateBeforeIcon sx={{ color: 'grey' }} />
+                    </IconButton>
+                    <Typography sx={{ px: 1 }}>{pageNumber} of {numPages}</Typography>
+                    <IconButton disabled={pageNumber === numPages} onClick={() => setPageNumber(pageNumber => pageNumber + 1)}>
+                        <NavigateNextIcon sx={{ color: 'grey' }} />
+                    </IconButton>
+                </Box>
+            </Box>
         </>
     );
 };

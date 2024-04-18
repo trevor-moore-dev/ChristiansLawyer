@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /$
-Allow: /frequently-asked-questions
+Allow: /what-is-the-gospel
 Allow: /contact-us
 Allow: /services
 Disallow: /

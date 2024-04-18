@@ -46,6 +46,14 @@ module.exports = {
      {
        test: /\.css$/i,
        use: ['css-loader']
+     },
+     {
+        test: /\.pdf$/i,
+        use: ['file-loader']
+     },
+     {
+        test: /\.node$/i,
+        use: ['node-loader']
      }
    ]
  },

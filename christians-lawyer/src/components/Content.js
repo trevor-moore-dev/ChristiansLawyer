@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from './Home';
 import Services from './Services';
-import Faq from './Faq';
+import Gospel from './Gospel';
 import Contact from './Contact';
 import Box from '@mui/material/Box';
 
@@ -12,7 +12,7 @@ export default function Content() {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/services' element={<Services />} />
-                <Route path='/frequently-asked-questions' element={<Faq />} />
+                <Route path='/what-is-the-gospel' element={<Gospel />} />
                 <Route path='/contact-us' element={<Contact />} />
             </Routes>
         </Box>

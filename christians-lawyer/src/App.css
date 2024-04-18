@@ -2,3 +2,19 @@
     object-fit: contain;
     max-width: 100%;
 }
+  
+.react-pdf__Document {
+    height: 792px;
+    margin: 0 auto;
+}
+
+.react-pdf__Document:hover + div.pagination {
+    opacity: 1;
+}
+
+@media(max-width: 800px) {
+    .react-pdf__Page__canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
