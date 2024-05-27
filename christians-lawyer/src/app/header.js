@@ -16,7 +16,8 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useTheme } from '@mui/material/styles';
+import { usePathname } from 'next/navigation';
 import { ColorModeContext } from './theme';
 
 const linkStyles = {
@@ -45,7 +46,7 @@ function HideOnScroll({ children }) {
 
 export default function Header() {
     const theme = useTheme();
-    const router = useRouter();
+    const pathname = usePathname();
     const colorMode = useContext(ColorModeContext);
     const [checked, setChecked] = useState(theme.palette.mode === 'dark');
     const [anchorElNav, setAnchorElNav] = useState(null);
@@ -61,6 +62,13 @@ export default function Header() {
     const toggleTheme = (e) => {
         setChecked(e.target.checked);
         colorMode.toggleColorMode();
+    };
+
+    const getLinkStyles = (route) => {
+        if (pathname == route) {
+            return activeLinkStyles;
+        }
+        return linkStyles;
     };
 
     return (
@@ -168,7 +176,7 @@ export default function Header() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
-                                <Link href='/' style={router.pathname == '/' ? activeLinkStyles : linkStyles}>
+                                <Link href='/' style={getLinkStyles('/')}>
                                     HOME
                                 </Link>
                             </Typography>
@@ -177,7 +185,7 @@ export default function Header() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
-                                <Link href='/services' style={router.pathname == '/services' ? activeLinkStyles : linkStyles}>
+                                <Link href='/services' style={getLinkStyles('/services')}>
                                     SERVICES
                                 </Link>
                             </Typography>
@@ -186,7 +194,7 @@ export default function Header() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
-                                <Link href='/what-is-the-gospel' style={router.pathname == '/what-is-the-gospel' ? activeLinkStyles : linkStyles}>
+                                <Link href='/what-is-the-gospel' style={getLinkStyles('/what-is-the-gospel')}>
                                     WHAT IS THE GOSPEL
                                 </Link>
                             </Typography>
@@ -195,7 +203,7 @@ export default function Header() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
-                                <Link href='/contact-us' style={router.pathname == '/contact-us' ? activeLinkStyles : linkStyles}>
+                                <Link href='/contact-us' style={getLinkStyles('/contact-us')}>
                                     CONTACT US
                                 </Link>
                             </Typography>

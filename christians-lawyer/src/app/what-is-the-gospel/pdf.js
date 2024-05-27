@@ -19,7 +19,9 @@ import './page.module.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = '//unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
 
-export default function Document({ file }) {
+//import assuranceForEternity from '../../../public/assurance-for-eternity.pdf';
+
+export default function Pdf() {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
 
@@ -29,7 +31,7 @@ export default function Document({ file }) {
 
     return (
         <>
-            <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+            <Document file='/assurance-for-eternity.pdf' onLoadSuccess={onDocumentLoadSuccess}>
                 <Page pageNumber={pageNumber} />
             </Document>
             <Box

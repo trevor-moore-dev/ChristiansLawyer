@@ -5,11 +5,12 @@ import {
     Link,
     Typography
 } from '@mui/material';
+import {
+    EnglishCarousel,
+    SpanishCarousel
+} from './carousel';
 import Image from 'next/image';
-import Carousel from 'react-material-ui-carousel';
-import Document from './document';
-import styles from './page.module.css';
-import assuranceForEternity from '../../../public/assurance-for-eternity.pdf';
+import Pdf from './pdf';
 
 export const metadata = {
     title: 'Christians Lawyer | What Is The Gospel',
@@ -49,13 +50,13 @@ export default function Gospel() {
                 <Grid item xs={12} md={12} lg={9} sx={{ display: 'flex', flexDirection: 'column' }}>
                     <Typography variant='h4'>What Is The Gospel?</Typography>
                     <Typography variant='body1' sx={{ fontStyle: 'italic', pt: 2 }}>
-                        "The gospel is called the 'good news' because it addresses the most serious problem that you and I have as human beings, and that problem is simply this: God is holy and He is just, and I'm not. And at the end of my life, I'm going to stand before a just and holy God, and I'll be judged. And I'll be judged either on the basis of my own righteousness–or lack of it–or the righteousness of another. The good news of the gospel is that Jesus lived a life of perfect righteousness, of perfect obedience to God, not for His own well being but for His people. He has done for me what I couldn't possibly do for myself. But not only has He lived that life of perfect obedience, He offered Himself as a perfect sacrifice to satisfy the justice and the righteousness of God."
+                        &quot;The gospel is called the &apos;good news&apos; because it addresses the most serious problem that you and I have as human beings, and that problem is simply this: God is holy and He is just, and I&apos;m not. And at the end of my life, I&apos;m going to stand before a just and holy God, and I&apos;ll be judged. And I&apos;ll be judged either on the basis of my own righteousness – or lack of it – or the righteousness of another. The good news of the gospel is that Jesus lived a life of perfect righteousness, of perfect obedience to God, not for His own well being but for His people. He has done for me what I couldn&apos;t possibly do for myself. But not only has He lived that life of perfect obedience, He offered Himself as a perfect sacrifice to satisfy the justice and the righteousness of God.&quot;
                     </Typography>
                     <Typography variant='body1' sx={{ pt: 1 }}>
                         - R.C. Sproul
                     </Typography>
                     <Typography variant='body1' sx={{ fontStyle: 'italic', pt: 4 }}>
-                        "If you confess with your mouth that Jesus is Lord and believe in your heart that God raised Him from the dead, you will be saved."
+                        &quot;If you confess with your mouth that Jesus is Lord and believe in your heart that God raised Him from the dead, you will be saved.&quot;
                     </Typography>
                     <Typography variant='body1' sx={{ pt: 1 }}>
                         - Romans 10:9 ESV
@@ -77,96 +78,10 @@ export default function Gospel() {
                     <Typography variant='h4'>Gospel Justice Tracts</Typography>
                 </Grid>
                 <Grid item xs={12} md={12} lg={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 5 }}>
-                    <Carousel
-                        animation='slide'
-                        fullHeightHover={false}
-                        autoPlay={false}
-                        sx={{
-                            maxWidth: '500px',
-                            maxHeight: '400px',
-                            width: '100%'
-                        }}
-                    >
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-1.jpg' className={styles.contain} alt='Engish Gospel Tract page 1' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-2.jpg' className={styles.contain} alt='Engish Gospel Tract page 2' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-3.jpg' className={styles.contain} alt='Engish Gospel Tract page 3' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-4.jpg' className={styles.contain} alt='Engish Gospel Tract page 4' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-5.jpg' className={styles.contain} alt='Engish Gospel Tract page 5' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-6.jpg' className={styles.contain} alt='Engish Gospel Tract page 6' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-7.jpg' className={styles.contain} alt='Engish Gospel Tract page 7' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-8.jpg' className={styles.contain} alt='Engish Gospel Tract page 8' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-9.jpg' className={styles.contain} alt='Engish Gospel Tract page 9' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-10.jpg' className={styles.contain} alt='Engish Gospel Tract page 10' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/english-tract-11.jpg' className={styles.contain} alt='Engish Gospel Tract page 11' />
-                        </Box>
-                    </Carousel>
+                    <EnglishCarousel />
                 </Grid>
                 <Grid item xs={12} md={12} lg={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 5 }}>
-                    <Carousel
-                        animation='slide'
-                        fullHeightHover={false}
-                        autoPlay={false}
-                        sx={{
-                            maxWidth: '500px',
-                            maxHeight: '400px',
-                            width: '100%'
-                        }}
-                    >
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-1.jpg' className={styles.contain} alt='Spanish Gospel Tract page 1' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-2.jpg' className={styles.contain} alt='Spanish Gospel Tract page 2' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-3.jpg' className={styles.contain} alt='Spanish Gospel Tract page 3' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-4.jpg' className={styles.contain} alt='Spanish Gospel Tract page 4' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-5.jpg' className={styles.contain} alt='Spanish Gospel Tract page 5' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-6.jpg' className={styles.contain} alt='Spanish Gospel Tract page 6' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-7.jpg' className={styles.contain} alt='Spanish Gospel Tract page 7' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-8.jpg' className={styles.contain} alt='Spanish Gospel Tract page 8' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-9.jpg' className={styles.contain} alt='Spanish Gospel Tract page 9' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-10.jpg' className={styles.contain} alt='Spanish Gospel Tract page 10' />
-                        </Box>
-                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <Image src='/spanish-tract-11.jpg' className={styles.contain} alt='Spanish Gospel Tract page 11' />
-                        </Box>
-                    </Carousel>
+                    <SpanishCarousel />
                 </Grid>
             </Grid>
             <Box
@@ -182,7 +97,7 @@ export default function Gospel() {
                     py: 5
                 }}
             >
-                <Document file={assuranceForEternity} />
+                <Pdf />
             </Box>
         </>
     );

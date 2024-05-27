@@ -32,6 +32,7 @@
     "babel-plugin-react-compiler": "0.0.0-experimental-592953e-20240517",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.3",
-    "eslint-plugin-react-compiler": "0.0.0-experimental-c8b3f72-20240517"
+    "eslint-plugin-react-compiler": "0.0.0-experimental-c8b3f72-20240517",
+    "nextjs-node-loader": "1.1.5"
   }
 }

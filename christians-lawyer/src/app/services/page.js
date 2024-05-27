@@ -28,7 +28,7 @@ export default function Services() {
                     </Typography>
                     <Divider variant="middle" />
                     <Typography sx={{ py: 1, textAlign: 'center' }}>
-                        Let us sit down with you and look over your legal situation/matter. Do you have questions about your current plan? Do you have an upcoming matter that needs immediate attention? With a consultation, we can help get you on God's track for you.
+                        Let us sit down with you and look over your legal situation/matter. Do you have questions about your current plan? Do you have an upcoming matter that needs immediate attention? With a consultation, we can help get you on God&apos;s track for you.
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={12} lg={4} sx={{ textAlign: 'center', p: 5 }}>
