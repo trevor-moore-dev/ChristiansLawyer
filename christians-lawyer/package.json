@@ -15,11 +15,18 @@
   },
   "dependencies": {
     "@emotion/cache": "11.11.0",
+    "@emotion/react": "11.11.4",
+    "@emotion/styled": "11.11.5",
+    "@mui/icons-material": "5.15.18",
     "@mui/material": "5.15.18",
     "@mui/material-nextjs": "5.15.11",
+    "leaflet": "1.9.4",
     "next": "14.3.0-canary.76",
     "react": "19.0.0-rc-915b914b3a-20240515",
-    "react-dom": "19.0.0-rc-915b914b3a-20240515"
+    "react-dom": "19.0.0-rc-915b914b3a-20240515",
+    "react-leaflet": "4.2.1",
+    "react-material-ui-carousel": "3.4.2",
+    "react-pdf": "8.0.2"
   },
   "devDependencies": {
     "babel-plugin-react-compiler": "0.0.0-experimental-592953e-20240517",
