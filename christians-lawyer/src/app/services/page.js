@@ -1,52 +1,28 @@
-import { useEffect } from "react";
-import { Helmet } from 'react-helmet';
-import Grid from '@mui/material/Grid';
-import Typography from "@mui/material/Typography";
-import Divider from '@mui/material/Divider';
-import OnlineLegalConsultation from '../resources/images/online-legal-consultation.png';
-import LegalPlans from '../resources/images/legal-plans.jpg';
-import SpiritualPlans from '../resources/images/spiritual-plans.jpg';
+import {
+    Grid,
+    Typography,
+    Divider
+} from '@mui/material';
+import Image from 'next/image';
+
+export const metadata = {
+    title: 'Christians Lawyer | Services',
+    description: 'Legal services offered by Christians Lawyer',
+    keywords: ['Lawyer','Attorney','Legal Aid','Legal Help','Christian Lawyer','Christian Attorney','Christian','Christ','Gospel','Justice','Phoenix','Phoenix Arizona','Arizona'],
+    alternates: {
+        canonical: 'https://www.christianslawyer.org/services'
+    }
+}
 
 export default function Services() {
-
-    useEffect(() => {
-        new Image().src = OnlineLegalConsultation;
-        new Image().src = LegalPlans;
-        new Image().src = SpiritualPlans;
-    }, []);
-
     return (
         <>
-            <Helmet
-                htmlAttributes={{ lang: 'en' }}
-                title="Christians Lawyer | Services"
-                meta={[
-                    {
-                        name: 'title',
-                        content: "Christians Lawyer | Services"
-                    },
-                    {
-                        name: 'description',
-                        content: "Legal services offered by Christians Lawyer"
-                    },
-                    {
-                        name: 'keywords',
-                        content: 'Lawyer,Attorney,Legal Aid,Legal Help,Christian Lawyer,Christian Attorney,Christian,Christ,Gospel,Justice,Phoenix,Phoenix Arizona,Arizona'
-                    }
-                ]}
-                link={[
-                    {
-                        rel: 'canonical',
-                        href: 'https://www.christianslawyer.org/services'
-                    }
-                ]}
-            />
             <Typography variant='h1' sx={{ pt: 6, fontSize: '2rem', textAlign: 'center' }}>
                 Services
             </Typography>
             <Grid container sx={{ width: { xs: '90%', md: '60%', lg: '80%' }, margin: '0 auto' }}>
                 <Grid item xs={12} md={12} lg={4} sx={{ textAlign: 'center', p: 5 }}>
-                    <img src={OnlineLegalConsultation} style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Online Legal Consultation" />
+                    <Image src='/online-legal-consultation.png' style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Online Legal Consultation" priority />
                     <Typography variant='h5' sx={{ py: 1, textAlign: 'center' }}>
                         Online Legal Consultation
                     </Typography>
@@ -56,7 +32,7 @@ export default function Services() {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={12} lg={4} sx={{ textAlign: 'center', p: 5 }}>
-                    <img src={LegalPlans} style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Legal Plans" />
+                    <Image src='/legal-plans.jpg' style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Legal Plans" priority />
                     <Typography variant='h5' sx={{ py: 1, textAlign: 'center' }}>
                         Legal Plans
                     </Typography>
@@ -66,7 +42,7 @@ export default function Services() {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={12} lg={4} sx={{ textAlign: 'center', p: 5 }}>
-                    <img src={SpiritualPlans} style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Spiritual Plans" />
+                    <Image src='/spiritual-plans.jpg' style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Spiritual Plans" priority />
                     <Typography variant='h5' sx={{ py: 1, textAlign: 'center' }}>
                         Spiritual Plans
                     </Typography>
@@ -78,4 +54,4 @@ export default function Services() {
             </Grid>
         </>
     );
-};
+}

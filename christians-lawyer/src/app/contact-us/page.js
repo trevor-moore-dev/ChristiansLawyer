@@ -3,7 +3,7 @@ import {
     Grid,
     Typography,
     Link
-} from '@mui/material/Grid';
+} from '@mui/material';
 
 const MapContainer = dynamic(() => import('react-leaflet/MapContainer').then((mod) => mod.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet/TileLayer').then((mod) => mod.TileLayer), { ssr: false });
@@ -17,7 +17,7 @@ export const metadata = {
     alternates: {
         canonical: 'https://www.christianslawyer.org/contact-us'
     }
-};
+}
 
 export default function Contact() {
     return (
@@ -51,4 +51,4 @@ export default function Contact() {
             </Grid>
         </Grid>
     );
-};
+}
