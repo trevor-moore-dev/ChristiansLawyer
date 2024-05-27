@@ -1,18 +1,20 @@
 'use client';
-import { useState, useContext } from "react";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
+import { useState, useContext } from 'react';
+import {
+    AppBar,
+    Box,
+    Toolbar,
+    Typography,
+    IconButton,
+    Container,
+    useScrollTrigger,
+    Slide,
+    Menu,
+    MenuItem,
+    Switch,
+    Tooltip
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Container from '@mui/material/Container';
-import Slide from '@mui/material/Slide';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Switch from '@mui/material/Switch';
-import Tooltip from '@mui/material/Tooltip';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ColorModeContext } from './theme';
@@ -22,7 +24,7 @@ const linkStyles = {
     fontSize: '14px',
     letterSpacing: '2px',
     textDecoration: 'none'
-};
+}
 
 const activeLinkStyles = {
     ...linkStyles,
@@ -30,7 +32,7 @@ const activeLinkStyles = {
     textUnderlineOffset: '7px',
     textDecorationThickness: '2px',
     fontWeight: 'bold'
-};
+}
 
 function HideOnScroll({ children }) {
     const trigger = useScrollTrigger();
@@ -39,7 +41,7 @@ function HideOnScroll({ children }) {
             {children}
         </Slide>
     );
-};
+}
 
 export default function Header() {
     const theme = useTheme();
@@ -211,4 +213,4 @@ export default function Header() {
             </AppBar>
         </HideOnScroll>
     );
-};
+}

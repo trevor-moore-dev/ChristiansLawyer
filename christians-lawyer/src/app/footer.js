@@ -1,6 +1,8 @@
-import Grid from '@mui/material/Grid';
-import Typography from "@mui/material/Typography";
-import Divider from '@mui/material/Divider';
+import {
+    Grid,
+    Typography,
+    Divider
+} from '@mui/material';
 
 export default function Footer() {
     return (
@@ -15,4 +17,4 @@ export default function Footer() {
             </Grid>
         </Grid>
     );
-};
+}

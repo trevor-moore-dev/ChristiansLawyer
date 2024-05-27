@@ -1,12 +1,14 @@
-import loadable from '@loadable/component';
-import Grid from '@mui/material/Grid';
-import Typography from "@mui/material/Typography";
-import Link from '@mui/material/Link';
+import dynamic from 'next/dynamic';
+import {
+    Grid,
+    Typography,
+    Link
+} from '@mui/material/Grid';
 
-const MapContainer = loadable(() => import('react-leaflet/MapContainer'), { ssr: false, resolveComponent: (components) => components.MapContainer });
-const TileLayer = loadable(() => import('react-leaflet/TileLayer'), { ssr: false, resolveComponent: (components) => components.TileLayer });
-const Marker = loadable(() => import('react-leaflet/Marker'), { ssr: false, resolveComponent: (components) => components.Marker });
-const Popup = loadable(() => import('react-leaflet/Popup'), { ssr: false, resolveComponent: (components) => components.Popup });
+const MapContainer = dynamic(() => import('react-leaflet/MapContainer').then((mod) => mod.MapContainer), { ssr: false });
+const TileLayer = dynamic(() => import('react-leaflet/TileLayer').then((mod) => mod.TileLayer), { ssr: false });
+const Marker = dynamic(() => import('react-leaflet/Marker').then((mod) => mod.Marker), { ssr: false });
+const Popup = dynamic(() => import('react-leaflet/Popup').then((mod) => mod.Popup), { ssr: false });
 
 export const metadata = {
     title: 'Christians Lawyer | Contact Us',
