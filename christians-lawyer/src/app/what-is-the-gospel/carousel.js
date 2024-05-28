@@ -2,7 +2,28 @@
 import Carousel from 'react-material-ui-carousel';
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import styles from './page.module.css';
+import englishTract1 from '../../../public/english-tract-1.jpg';
+import englishTract2 from '../../../public/english-tract-2.jpg';
+import englishTract3 from '../../../public/english-tract-3.jpg';
+import englishTract4 from '../../../public/english-tract-4.jpg';
+import englishTract5 from '../../../public/english-tract-5.jpg';
+import englishTract6 from '../../../public/english-tract-6.jpg';
+import englishTract7 from '../../../public/english-tract-7.jpg';
+import englishTract8 from '../../../public/english-tract-8.jpg';
+import englishTract9 from '../../../public/english-tract-9.jpg';
+import englishTract10 from '../../../public/english-tract-10.jpg';
+import englishTract11 from '../../../public/english-tract-11.jpg';
+import spanishTract1 from '../../../public/spanish-tract-1.jpg';
+import spanishTract2 from '../../../public/spanish-tract-2.jpg';
+import spanishTract3 from '../../../public/spanish-tract-3.jpg';
+import spanishTract4 from '../../../public/spanish-tract-4.jpg';
+import spanishTract5 from '../../../public/spanish-tract-5.jpg';
+import spanishTract6 from '../../../public/spanish-tract-6.jpg';
+import spanishTract7 from '../../../public/spanish-tract-7.jpg';
+import spanishTract8 from '../../../public/spanish-tract-8.jpg';
+import spanishTract9 from '../../../public/spanish-tract-9.jpg';
+import spanishTract10 from '../../../public/spanish-tract-10.jpg';
+import spanishTract11 from '../../../public/spanish-tract-11.jpg';
 
 function EnglishCarousel() {
     return (
@@ -17,37 +38,37 @@ function EnglishCarousel() {
             }}
         >
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-1.jpg' className={styles.contain} alt='Engish Gospel Tract page 1' />
+                <Image src={englishTract1} className='contain' alt='Engish Gospel Tract page 1' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-2.jpg' className={styles.contain} alt='Engish Gospel Tract page 2' />
+                <Image src={englishTract2} className='contain' alt='Engish Gospel Tract page 2' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-3.jpg' className={styles.contain} alt='Engish Gospel Tract page 3' />
+                <Image src={englishTract3} className='contain' alt='Engish Gospel Tract page 3' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-4.jpg' className={styles.contain} alt='Engish Gospel Tract page 4' />
+                <Image src={englishTract4} className='contain' alt='Engish Gospel Tract page 4' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-5.jpg' className={styles.contain} alt='Engish Gospel Tract page 5' />
+                <Image src={englishTract5} className='contain' alt='Engish Gospel Tract page 5' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-6.jpg' className={styles.contain} alt='Engish Gospel Tract page 6' />
+                <Image src={englishTract6} className='contain' alt='Engish Gospel Tract page 6' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-7.jpg' className={styles.contain} alt='Engish Gospel Tract page 7' />
+                <Image src={englishTract7} className='contain' alt='Engish Gospel Tract page 7' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-8.jpg' className={styles.contain} alt='Engish Gospel Tract page 8' />
+                <Image src={englishTract8} className='contain' alt='Engish Gospel Tract page 8' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-9.jpg' className={styles.contain} alt='Engish Gospel Tract page 9' />
+                <Image src={englishTract9} className='contain' alt='Engish Gospel Tract page 9' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-10.jpg' className={styles.contain} alt='Engish Gospel Tract page 10' />
+                <Image src={englishTract10} className='contain' alt='Engish Gospel Tract page 10' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/english-tract-11.jpg' className={styles.contain} alt='Engish Gospel Tract page 11' />
+                <Image src={englishTract11} className='contain' alt='Engish Gospel Tract page 11' />
             </Box>
         </Carousel>
     );
@@ -66,37 +87,37 @@ function SpanishCarousel() {
             }}
         >
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-1.jpg' className={styles.contain} alt='Spanish Gospel Tract page 1' />
+                <Image src={spanishTract1} className='contain' alt='Spanish Gospel Tract page 1' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-2.jpg' className={styles.contain} alt='Spanish Gospel Tract page 2' />
+                <Image src={spanishTract2} className='contain' alt='Spanish Gospel Tract page 2' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-3.jpg' className={styles.contain} alt='Spanish Gospel Tract page 3' />
+                <Image src={spanishTract3} className='contain' alt='Spanish Gospel Tract page 3' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-4.jpg' className={styles.contain} alt='Spanish Gospel Tract page 4' />
+                <Image src={spanishTract4} className='contain' alt='Spanish Gospel Tract page 4' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-5.jpg' className={styles.contain} alt='Spanish Gospel Tract page 5' />
+                <Image src={spanishTract5} className='contain' alt='Spanish Gospel Tract page 5' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-6.jpg' className={styles.contain} alt='Spanish Gospel Tract page 6' />
+                <Image src={spanishTract6} className='contain' alt='Spanish Gospel Tract page 6' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-7.jpg' className={styles.contain} alt='Spanish Gospel Tract page 7' />
+                <Image src={spanishTract7} className='contain' alt='Spanish Gospel Tract page 7' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-8.jpg' className={styles.contain} alt='Spanish Gospel Tract page 8' />
+                <Image src={spanishTract8} className='contain' alt='Spanish Gospel Tract page 8' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-9.jpg' className={styles.contain} alt='Spanish Gospel Tract page 9' />
+                <Image src={spanishTract9} className='contain' alt='Spanish Gospel Tract page 9' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-10.jpg' className={styles.contain} alt='Spanish Gospel Tract page 10' />
+                <Image src={spanishTract10} className='contain' alt='Spanish Gospel Tract page 10' />
             </Box>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Image src='/spanish-tract-11.jpg' className={styles.contain} alt='Spanish Gospel Tract page 11' />
+                <Image src={spanishTract11} className='contain' alt='Spanish Gospel Tract page 11' />
             </Box>
         </Carousel>
     );

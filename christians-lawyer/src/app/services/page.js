@@ -4,6 +4,9 @@ import {
     Divider
 } from '@mui/material';
 import Image from 'next/image';
+import onlineLegalConsultation from '../../../public/online-legal-consultation.png';
+import legalPlans from '../../../public/legal-plans.jpg';
+import spiritualPlans from '../../../public/spiritual-plans.jpg';
 
 export const metadata = {
     title: 'Christians Lawyer | Services',
@@ -22,7 +25,7 @@ export default function Services() {
             </Typography>
             <Grid container sx={{ width: { xs: '90%', md: '60%', lg: '80%' }, margin: '0 auto' }}>
                 <Grid item xs={12} md={12} lg={4} sx={{ textAlign: 'center', p: 5 }}>
-                    <Image src='/online-legal-consultation.png' style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Online Legal Consultation" priority />
+                    <Image src={onlineLegalConsultation} style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Online Legal Consultation" priority />
                     <Typography variant='h5' sx={{ py: 1, textAlign: 'center' }}>
                         Online Legal Consultation
                     </Typography>
@@ -32,7 +35,7 @@ export default function Services() {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={12} lg={4} sx={{ textAlign: 'center', p: 5 }}>
-                    <Image src='/legal-plans.jpg' style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Legal Plans" priority />
+                    <Image src={legalPlans} style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Legal Plans" priority />
                     <Typography variant='h5' sx={{ py: 1, textAlign: 'center' }}>
                         Legal Plans
                     </Typography>
@@ -42,7 +45,7 @@ export default function Services() {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={12} lg={4} sx={{ textAlign: 'center', p: 5 }}>
-                    <Image src='/spiritual-plans.jpg' style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Spiritual Plans" priority />
+                    <Image src={spiritualPlans} style={{ height: '200px', maxWidth: '100%', objectFit: 'cover' }} alt="Spiritual Plans" priority />
                     <Typography variant='h5' sx={{ py: 1, textAlign: 'center' }}>
                         Spiritual Plans
                     </Typography>

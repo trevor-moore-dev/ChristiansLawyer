@@ -13,13 +13,7 @@ import {
     Page
 } from 'react-pdf';
 
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
-import './page.module.css';
-
 pdfjs.GlobalWorkerOptions.workerSrc = '//unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
-
-//import assuranceForEternity from '../../../public/assurance-for-eternity.pdf';
 
 export default function Pdf() {
     const [numPages, setNumPages] = useState(null);

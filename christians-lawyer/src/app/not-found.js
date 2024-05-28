@@ -13,7 +13,7 @@ import {
   
   export default function NotFound() {
       return (
-        <Box sx={{ width: { md: '80%', xs: '90%' }, mx: 'auto', textAlign: 'center', mt: 12, mb: '100vh' }}>
+        <Box sx={{ width: { md: '80%', xs: '90%' }, mx: 'auto', textAlign: 'center', pt: 6, mb: '100vh' }}>
             <Alert severity="error">Page not found.</Alert>
         </Box>
       );

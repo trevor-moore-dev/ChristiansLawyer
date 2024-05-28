@@ -10,7 +10,12 @@ import {
     SpanishCarousel
 } from './carousel';
 import Image from 'next/image';
+import golgotha from '../../../public/golgotha.png';
 import Pdf from './pdf';
+
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+import './page.css';
 
 export const metadata = {
     title: 'Christians Lawyer | What Is The Gospel',
@@ -37,7 +42,7 @@ export default function Gospel() {
             >
                 <Image
                     priority
-                    src='/golgotha.png'
+                    src={golgotha}
                     alt="Golgotha"
                     style={{
                         height: '100%',

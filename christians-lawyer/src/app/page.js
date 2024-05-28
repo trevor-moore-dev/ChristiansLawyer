@@ -4,6 +4,7 @@ import {
   Box
 } from '@mui/material';
 import Image from 'next/image';
+import background from '../../public/background.png';
 
 export const metadata = {
     title: 'Christians Lawyer | Legal Aid',
@@ -30,7 +31,7 @@ export default function Home() {
             >
                 <Image
                     priority
-                    src='/background.png'
+                    src={background}
                     alt='Christian Lawyer'
                     style={{
                         height: '100%',
