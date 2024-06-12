@@ -1,19 +1,39 @@
-import React, { useState, useContext } from "react";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
+'use client';
+import { useState, useContext } from 'react';
+import {
+    AppBar,
+    Box,
+    Toolbar,
+    Typography,
+    IconButton,
+    Container,
+    useScrollTrigger,
+    Slide,
+    Menu,
+    MenuItem,
+    Switch,
+    Tooltip
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Container from '@mui/material/Container';
-import Slide from '@mui/material/Slide';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Switch from '@mui/material/Switch';
-import Tooltip from '@mui/material/Tooltip';
-import { ThemeContext } from './ThemeContext';
-import { Link, NavLink } from "react-router-dom";
+import Link from 'next/link';
+import { useTheme } from '@mui/material/styles';
+import { usePathname } from 'next/navigation';
+import { ColorModeContext } from './theme';
+
+const linkStyles = {
+    color: 'inherit',
+    fontSize: '14px',
+    letterSpacing: '2px',
+    textDecoration: 'none'
+}
+
+const activeLinkStyles = {
+    ...linkStyles,
+    textDecoration: 'underline',
+    textUnderlineOffset: '7px',
+    textDecorationThickness: '2px',
+    fontWeight: 'bold'
+}
 
 function HideOnScroll({ children }) {
     const trigger = useScrollTrigger();
@@ -22,27 +42,13 @@ function HideOnScroll({ children }) {
             {children}
         </Slide>
     );
-};
+}
 
 export default function Header() {
-
-    const linkStyles = {
-        color: 'inherit',
-        fontSize: '14px',
-        letterSpacing: '2px',
-        textDecoration: 'none'
-    };
-
-    const activeLinkStyles = {
-        ...linkStyles,
-        textDecoration: 'underline',
-        textUnderlineOffset: '7px',
-        textDecorationThickness: '2px',
-        fontWeight: 'bold'
-    };
-
-    const theme = useContext(ThemeContext);
-    const [checked, setChecked] = useState(theme.isDark);
+    const theme = useTheme();
+    const pathname = usePathname();
+    const colorMode = useContext(ColorModeContext);
+    const [checked, setChecked] = useState(theme.palette.mode === 'dark');
     const [anchorElNav, setAnchorElNav] = useState(null);
 
     const handleOpenNavMenu = (e) => {
@@ -55,7 +61,14 @@ export default function Header() {
 
     const toggleTheme = (e) => {
         setChecked(e.target.checked);
-        theme.toggle();
+        colorMode.toggleColorMode();
+    };
+
+    const getLinkStyles = (route) => {
+        if (pathname == route) {
+            return activeLinkStyles;
+        }
+        return linkStyles;
     };
 
     return (
@@ -103,28 +116,28 @@ export default function Header() {
                             >
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link to='/' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        <Link href='/' style={{ color: 'inherit', textDecoration: 'none' }}>
                                             Home
                                         </Link>
                                     </Typography>
                                 </MenuItem>
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link to='/services' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        <Link href='/services' style={{ color: 'inherit', textDecoration: 'none' }}>
                                             Services
                                         </Link>
                                     </Typography>
                                 </MenuItem>
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link to='/what-is-the-gospel' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        <Link href='/what-is-the-gospel' style={{ color: 'inherit', textDecoration: 'none' }}>
                                             What Is The Gospel
                                         </Link>
                                     </Typography>
                                 </MenuItem>
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link to='/contact-us' style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        <Link href='/contact-us' style={{ color: 'inherit', textDecoration: 'none' }}>
                                             Contact Us
                                         </Link>
                                     </Typography>
@@ -148,7 +161,7 @@ export default function Header() {
                             }}
                         >
                             <Link
-                                to='/'
+                                href='/'
                                 style={{
                                     color: 'inherit',
                                     textDecoration: 'none'
@@ -163,43 +176,42 @@ export default function Header() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
-                                <NavLink to='/' style={({ isActive }) => (isActive ? activeLinkStyles : linkStyles )}>
+                                <Link href='/' style={getLinkStyles('/')}>
                                     HOME
-                                </NavLink>
+                                </Link>
                             </Typography>
                             <Typography
                                 textAlign="center"
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
-                                <NavLink to='/services' style={({ isActive }) => (isActive ? activeLinkStyles : linkStyles )}>
+                                <Link href='/services' style={getLinkStyles('/services')}>
                                     SERVICES
-                                </NavLink>
+                                </Link>
                             </Typography>
                             <Typography
                                 textAlign="center"
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
-                                <NavLink to='/what-is-the-gospel' style={({ isActive }) => (isActive ? activeLinkStyles : linkStyles )}>
+                                <Link href='/what-is-the-gospel' style={getLinkStyles('/what-is-the-gospel')}>
                                     WHAT IS THE GOSPEL
-                                </NavLink>
+                                </Link>
                             </Typography>
                             <Typography
                                 textAlign="center"
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, mx: 2, display: 'flex', alignItems: 'center' }}
                             >
-                                <NavLink to='/contact-us' style={({ isActive }) => (isActive ? activeLinkStyles : linkStyles )}>
+                                <Link href='/contact-us' style={getLinkStyles('/contact-us')}>
                                     CONTACT US
-                                </NavLink>
+                                </Link>
                             </Typography>
                             <Tooltip title={checked ? 'Light Mode' : 'Dark Mode'}>
                                 <Switch
                                     color="default"
                                     checked={checked}
                                     onClick={toggleTheme}
-                                    inputProps={{ 'aria-label': checked ? 'light mode' : 'dark mode' }}
                                     sx={{ my: 2, mx: 2 }}
                                 />
                             </Tooltip>
@@ -209,4 +221,4 @@ export default function Header() {
             </AppBar>
         </HideOnScroll>
     );
-};
+}
