@@ -1,21 +1,20 @@
 'use client';
-import { useState, useMemo, createContext } from 'react';
+import { useState, useEffect, useMemo, createContext } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Cookies from 'js-cookie';
 
-function getThemeMode() {
-    const themeMode = Cookies.get('themeMode')?.toLowerCase();
-    if (themeMode === 'light' || themeMode === 'dark') {
-        return themeMode;
-    }
-    return 'light';
-}
-
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 export default function Theme({ children }) {
-    const [mode, setMode] = useState(getThemeMode());
+    const [mode, setMode] = useState('light');
+
+    useEffect(() => {
+        if (Cookies.get('themeMode')?.toLowerCase() === 'dark') {
+            setMode('dark');
+        }
+    }, []);
+
     const colorMode = useMemo(() => ({
         toggleColorMode: () => {
             setMode(prevMode => {

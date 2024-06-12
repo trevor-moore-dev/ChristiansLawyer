@@ -1,5 +1,5 @@
 'use client';
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import {
     AppBar,
     Box,
@@ -50,6 +50,10 @@ export default function Header() {
     const colorMode = useContext(ColorModeContext);
     const [checked, setChecked] = useState(theme.palette.mode === 'dark');
     const [anchorElNav, setAnchorElNav] = useState(null);
+
+    useEffect(() => {
+        setChecked(theme.palette.mode === 'dark');
+    }, [theme.palette.mode]);
 
     const handleOpenNavMenu = (e) => {
         setAnchorElNav(e.currentTarget);
