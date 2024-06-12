@@ -24,8 +24,7 @@
     "next": "14.3.0-canary.76",
     "react": "19.0.0-rc-915b914b3a-20240515",
     "react-dom": "19.0.0-rc-915b914b3a-20240515",
-    "react-material-ui-carousel": "3.4.2",
-    "react-pdf": "8.0.2"
+    "swiper": "11.1.4"
   },
   "devDependencies": {
     "babel-plugin-react-compiler": "0.0.0-experimental-592953e-20240517",

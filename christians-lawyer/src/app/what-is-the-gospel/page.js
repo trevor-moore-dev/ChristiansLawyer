@@ -11,10 +11,9 @@ import {
 } from './carousel';
 import Image from 'next/image';
 import golgotha from '../../../public/golgotha.png';
-import Pdf from './pdf';
-
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
+//import Pdf from './pdf';
+//import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+//import 'react-pdf/dist/esm/Page/TextLayer.css';
 import './page.css';
 
 export const metadata = {
@@ -43,7 +42,7 @@ export default function Gospel() {
                 <Image
                     priority
                     src={golgotha}
-                    alt="Golgotha"
+                    alt='Golgotha'
                     style={{
                         height: '100%',
                         width: '100%',
@@ -82,14 +81,18 @@ export default function Gospel() {
                 <Grid item xs={12} sx={{ pt: 10, textAlign: 'center' }}>
                     <Typography variant='h4'>Gospel Justice Tracts</Typography>
                 </Grid>
-                <Grid item xs={12} md={12} lg={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 5 }}>
-                    <EnglishCarousel />
+                <Grid item xs={12} md={12} lg={6} sx={{ py: 5 }}>
+                    <Box sx={{ px: 6, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <EnglishCarousel />
+                    </Box>
                 </Grid>
-                <Grid item xs={12} md={12} lg={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 5 }}>
-                    <SpanishCarousel />
+                <Grid item xs={12} md={12} lg={6} sx={{ py: 5 }}>
+                    <Box sx={{ px: 6, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <SpanishCarousel />
+                    </Box>
                 </Grid>
             </Grid>
-            <Box
+            {/*<Box
                 sx={{
                     width: {
                         md: '80%',
@@ -103,7 +106,7 @@ export default function Gospel() {
                 }}
             >
                 <Pdf />
-            </Box>
+            </Box>*/}
         </>
     );
 }
