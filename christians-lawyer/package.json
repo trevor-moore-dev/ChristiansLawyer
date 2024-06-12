@@ -7,12 +7,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "preinstall": "npx only-allow pnpm"
+    "lint": "next lint"
   },
   "engines": {
-    "npm": "Please use pnpm",
-    "yarn": "Please use pnpm"
+    "pnpm": "9.1.2"
   },
   "dependencies": {
     "@emotion/cache": "11.11.0",
