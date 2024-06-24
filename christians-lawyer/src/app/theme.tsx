@@ -1,13 +1,14 @@
 'use client';
-import { useState, useEffect, useMemo, createContext } from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState, useEffect, useMemo, createContext, ReactNode } from 'react';
+import { createTheme, ThemeProvider, ThemeOptions } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Cookies from 'js-cookie';
+import { PaletteMode } from '@mui/material';
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
-export default function Theme({ children }) {
-    const [mode, setMode] = useState('light');
+export default function Theme({ children }: { children: ReactNode }) {
+    const [mode, setMode] = useState<string>('light');
 
     useEffect(() => {
         if (Cookies.get('themeMode')?.toLowerCase() === 'dark') {
@@ -25,11 +26,15 @@ export default function Theme({ children }) {
         }
     }), []);
 
-    const theme = useMemo(() => createTheme({
-        palette: {
-            mode
-        }
-    }), [mode]);
+    const theme = useMemo(() => {
+        const options: ThemeOptions = {
+            palette: {
+                mode: mode as PaletteMode
+            }
+        };
+
+        return createTheme(options);
+    }, [mode]);
 
     return (
         <ColorModeContext.Provider value={colorMode}>

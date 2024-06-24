@@ -1,4 +1,5 @@
 'use client';
+import { CSSProperties } from 'react';
 import { Pagination, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Box } from '@mui/material';
@@ -39,7 +40,7 @@ function EnglishCarousel() {
             style={{
                 '--swiper-navigation-color': '#808080',
                 '--swiper-pagination-color': '#808080'
-            }}
+            } as CSSProperties}
         >
             <SwiperSlide>
                 <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -110,7 +111,7 @@ function SpanishCarousel() {
             style={{
                 '--swiper-navigation-color': '#808080',
                 '--swiper-pagination-color': '#808080'
-            }}
+            } as CSSProperties}
         >
             <SwiperSlide>
                 <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>

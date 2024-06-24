@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, ReactElement, MouseEvent, SyntheticEvent } from 'react';
 import {
     AppBar,
     Box,
@@ -35,10 +35,10 @@ const activeLinkStyles = {
     fontWeight: 'bold'
 }
 
-function HideOnScroll({ children }) {
+function HideOnScroll({ children }: { children: ReactElement }) {
     const trigger = useScrollTrigger();
     return (
-        <Slide appear={false} direction="down" in={!trigger}>
+        <Slide appear={false} direction='down' in={!trigger}>
             {children}
         </Slide>
     );
@@ -46,16 +46,16 @@ function HideOnScroll({ children }) {
 
 export default function Header() {
     const theme = useTheme();
-    const pathname = usePathname();
+    const pathname: string = usePathname();
     const colorMode = useContext(ColorModeContext);
-    const [checked, setChecked] = useState(theme.palette.mode === 'dark');
-    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [checked, setChecked] = useState<boolean>(theme.palette.mode === 'dark');
+    const [anchorElNav, setAnchorElNav] = useState<null | Element>(null);
 
     useEffect(() => {
         setChecked(theme.palette.mode === 'dark');
     }, [theme.palette.mode]);
 
-    const handleOpenNavMenu = (e) => {
+    const handleOpenNavMenu = (e: SyntheticEvent) => {
         setAnchorElNav(e.currentTarget);
     };
 
@@ -63,12 +63,12 @@ export default function Header() {
         setAnchorElNav(null);
     };
 
-    const toggleTheme = (e) => {
-        setChecked(e.target.checked);
+    const toggleTheme = () => {
+        setChecked(theme.palette.mode !== 'dark');
         colorMode.toggleColorMode();
     };
 
-    const getLinkStyles = (route) => {
+    const getLinkStyles = (route: string) => {
         if (pathname == route) {
             return activeLinkStyles;
         }

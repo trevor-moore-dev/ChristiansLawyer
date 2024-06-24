@@ -27,6 +27,11 @@
     "swiper": "11.1.4"
   },
   "devDependencies": {
+    "@types/google.maps": "3.55.10",
+    "@types/js-cookie": "3.0.6",
+    "@types/node": "20.14.8",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
     "babel-plugin-react-compiler": "0.0.0-experimental-592953e-20240517",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.3",

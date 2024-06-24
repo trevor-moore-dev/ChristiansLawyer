@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import Box from '@mui/material/Box';
 import Header from './header';
 import Footer from './footer';
 import Theme from './theme';
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body style={{ margin: 0 }}>
